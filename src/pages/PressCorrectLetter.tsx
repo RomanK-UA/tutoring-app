@@ -21,10 +21,6 @@ const PressCorrectLetter: React.FC = () => {
     }
   }, [flashColor]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value.toLocaleUpperCase());
-  };
-
   const resetGameRound = () => {
     setNum(getRandomNumberInRange(1, 5));
     setLetter(getRandomLetter());
@@ -43,9 +39,14 @@ const PressCorrectLetter: React.FC = () => {
       setFlashColor("bg-red-500");
     }
   };
-
   const handleKeyPress = (key: string) => {
-    setInputValue((prev) => prev + key);
+    if (key === "delete") {
+      // Remove the last character
+      setInputValue((prev) => prev.slice(0, -1));
+    } else {
+      // Add the key to the input value
+      setInputValue((prev) => prev + key);
+    }
   };
 
   return (
@@ -70,7 +71,6 @@ const PressCorrectLetter: React.FC = () => {
           opacity: 0.5,
         }}
         aria-hidden="true"
-        onChange={handleChange}
         className="h-30 font-bold text-9xl w-1/2 tracking-wider uppercase"
       />
 
@@ -81,7 +81,7 @@ const PressCorrectLetter: React.FC = () => {
         Проверить
       </button>
       <h2>{feedback}</h2>
-      <Keyboard onKeyPress={handleKeyPress} />
+      <Keyboard onKeyPress={handleKeyPress} variant="alphabet" />
     </GameContainer>
   );
 };

@@ -8,7 +8,7 @@ const GameContainer: React.FC<GameContainerProps> = ({
   flashColor,
 }) => (
   <div
-    className={`h-full flex flex-col items-center gap-10 justify-start transition-all duration-500 ${flashColor}`}
+    className={`h-full w-full flex flex-col items-center gap-10 justify-center transition-all duration-500 ${flashColor}`}
   >
     {children}
   </div>

@@ -32,7 +32,7 @@ function App() {
         >
           <Menu />
         </div>
-        <main className="h-full flex-grow m-auto flex justify-center items-center w-full text-center">
+        <main className="h-full flex-grow m-auto flex justify-center items-center w-full text-center p-4">
           <Routes>
             {menuItemsData.map((item) => (
               <Route

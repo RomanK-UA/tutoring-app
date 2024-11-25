@@ -1,11 +1,10 @@
-import DragImagesGame from "./pages/DragImagesGame";
+// import DragImagesGame from "./pages/DragImagesGame";
 import PressCorrectLetter from "./pages/PressCorrectLetter";
-
+import BasicMathGame from "./pages/BasicMathGame";
 enum Routes {
   PressCorrectLetter = '/PressCorrectLetter',
-    DragImagesGame = '/DragImagesGame',
-    SERVICES = '/services',
-    CONTACT = '/contact',
+    // DragImagesGame = '/DragImagesGame',
+    BasicMathGame = '/BasicMathGame',
   }
   
   interface MenuItem {
@@ -16,5 +15,7 @@ enum Routes {
   
   export const menuItemsData: MenuItem[] = [
     { name: 'Game 1', path: Routes.PressCorrectLetter, component:  PressCorrectLetter },
-    { name: 'Game 2', path: Routes.DragImagesGame, component: DragImagesGame },
+    { name: 'Game 2', path: Routes.BasicMathGame, component: BasicMathGame },
+    // { name: 'Game 2', path: Routes.DragImagesGame, component: DragImagesGame },
   ];
+  
